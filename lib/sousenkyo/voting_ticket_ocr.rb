@@ -1,21 +1,19 @@
-require 'rtesseract'
-
 module Sousenkyo
-  class VotingTicketParser
+  class VotingTicketOCR
     def initialize(tickets)
       @tickets = tickets
     end
 
     def parse_serial_codes
-      ticket.map do |ticket|
+      tickets.map do |ticket|
         dc    = DimensionCalulator.new(ticket)
         image = RTesseract::Mixed.new(
           ticket.filepath,
           { areas: [ dc.serial_code_area ] }
         )
 
-        ticket.serial_code = image.to_s.strip
-        ticket
+        serial_code = image.to_s[/[a-z1-9]{8}\s[a-z1-9]{8}/]
+        SerialCode.new(serial_code)
       end
     end
   end

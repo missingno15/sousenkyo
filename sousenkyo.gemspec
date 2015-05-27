@@ -18,10 +18,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "thor"
-  spec.add_runtime_dependency "rtesseract"
-  spec.add_runtime_dependency "rmagick"
+  spec.add_dependency "thor"
+  spec.add_dependency "rtesseract"
+  spec.add_dependency "rmagick"
+  spec.add_dependency "selenium-webdriver"
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "minitest-reporters"
+  spec.add_development_dependency "vcr"
 end

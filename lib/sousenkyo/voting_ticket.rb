@@ -1,22 +1,27 @@
-require 'rmagick'
-
 module Sousenkyo
   class VotingTicket
-    WIDTH_IN_CM  = Constant[:VOTING_TICKET_WIDTH]
-    HEIGHT_IN_CM = Constant[:VOTING_TICKET_HEIGHT]
-
     attr_reader :filepath, 
                 :image_scan, 
                 :width_in_px, 
-                :height_in_px
+                :height_in_px,
+                :upper_left_x,
+                :upper_left_y,
+                :serial_code_width,
+                :serial_code_height,
+                :width_in_cm,
+                :height_in_cm
 
-    attr_accessor :serial_code
-
-    def initalize(filepath)
-      @filepath     = filepath 
-      @image_scan   = Magick::Image.read(filepath)[0]
+    def initialize(filepath, measurements)
+      @filepath     = args[:filepath]
+      @image_scan   = Magick::Image.read(@filepath)[0]
       @width_in_px  = @image_scan.columns
       @height_in_px = @image_scan.rows
+      @upper_left_x = args[:upper_left_x ]
+      @upper_left_y = args[:upper_left_y]
+      @serial_code_width = args[:serial_code_width]
+      @serial_code_height = args[:serial_code_height]
+      @width_in_cm = args[:width_in_cm]
+      @height_in_cm = args[:height_in_cm]
     end
   end
 end
