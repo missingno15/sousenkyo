@@ -2,8 +2,8 @@ class VotingTicketFactory
   attr_reader :voting_tickets_dir, :measurements
 
   def initialize(args)
-    @voting_tickets_dir = args[:settings].fetch(
-      :voting_tickets_dir,
+    @voting_tickets_dir = args.fetch(
+      :image_dir_path,
       "/Users/#{ENV["USER"]}/Desktop/voting_tickets"
     )
     @measurements = args[:measurements]

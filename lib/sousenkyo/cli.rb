@@ -10,15 +10,16 @@ module Sousenkyo
     run `sousenkyo add MEMBER VOTE_COUNT`.
     VOTE
     def vote
+      settings = YAML.load_file(Sousenkyo.config_path("settings.yml"))
       manifesto = Manifesto.new
       tickets   = VotingTicketFactory.new(
-        settings: YAML.load_file(Sousenkyo.config_path("settings.yml")),
+        image_dir_path: settings["image_dir_path"],
         measurements: YAML.load_file(Sousenkyo.config_path("measurements.yml"))
       ).create_tickets!
 
       serial_codes = VotingTicketOCR.new(tickets).parse_serial_codes
 
-      VotingProxy.new(
+      VoteProxy.new(
         serial_codes,
         manifesto.filepath  
       ).vote!
