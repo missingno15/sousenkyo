@@ -1,3 +1,3 @@
 module Sousenkyo
-  Member = Struct.new(:name, :count) 
+  Member = Struct.new(:name, :vote_count) 
 end

@@ -1,6 +1,4 @@
 class VotingTicketFactory
-  attr_reader :voting_tickets_dir, :measurements
-
   def initialize(args)
     @voting_tickets_dir = args.fetch(
       :image_dir_path,
@@ -16,6 +14,8 @@ class VotingTicketFactory
   end
 
   private
+
+  attr_reader :voting_tickets_dir, :measurements
 
   def image_scan_paths
     if tickets_directory.empty?

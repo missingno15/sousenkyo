@@ -10,12 +10,12 @@ module Sousenkyo
     end
 
     def add(member)
-      db[member.name.to_sym] = member.count
+      db[member.name.to_sym] = member.vote_count
       write(db)
     end
 
     def edit(member)
-      db[search_for(member)] = member.count
+      db[search_for(member)] = member.vote_count
       write(db)
     rescue MemberNotFound
       puts "Couldn't find member with name of #{member.name}"
