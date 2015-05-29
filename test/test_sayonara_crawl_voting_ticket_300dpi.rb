@@ -8,7 +8,7 @@ class TestSayonaraCrawlVotingTicket300DPI < Minitest::Test
   private  
 
   def measurements_filepath
-    File.expand_path("test/fixtures/measurements/sayonara_crawl.yml")
+    "#{File.dirname(__FILE__)}/fixtures/measurements/sayonara_crawl.yml"
   end
 
   def ticket_path

@@ -2,25 +2,25 @@ require_relative "minitest_helper"
 require_relative "extensions/base_voting_ticket_test"
 require "sousenkyo/voting_ticket"
 
-class TestBokutachiWaTatakawanaiVotingTicket300DPI < Minitest::Test
+class TestBokutachiWaTatakawanaiVotingTicket600DPI < Minitest::Test
   include BaseVotingTicketTest 
 
   private  
 
   def measurements_filepath
-    File.expand_path("test/fixtures/measurements/bokutachi_wa_tatakawanai.yml")
+    "#{File.dirname(__FILE__)}/fixtures/measurements/bokutachi_wa_tatakawanai.yml"
   end
 
   def ticket_path
-    "images/bokutachi_300dpi.jpg"
+    "images/bokutachi_600dpi.jpg"
   end
 
   def expected_width_in_px
-    1392
+    2760
   end
 
   def expected_height_in_px
-    1414
+    2779
   end
 
   def expected_upper_left_x

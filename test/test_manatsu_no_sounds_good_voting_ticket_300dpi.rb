@@ -8,7 +8,7 @@ class TestManatsuNoSoundsGoodVotingTicket300DPI < Minitest::Test
   private  
 
   def measurements_filepath
-    File.expand_path("test/fixtures/measurements/manatsu_no_sounds_good.yml")
+    "#{File.dirname(__FILE__)}/fixtures/measurements/manatsu_no_sounds_good.yml"
   end
 
   def ticket_path
