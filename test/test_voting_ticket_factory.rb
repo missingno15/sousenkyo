@@ -9,13 +9,11 @@ require "fileutils"
 class TestVotingTicketFactory < Minitest::Test
   def setup
     @measurements ||= YAML.load_file(
-       File.expand_path(
-         "fixtures/measurements/bokutachi_wa_tatakawanai.yml"
-       )
+      "#{File.dirname(__FILE__)}/fixtures/measurements/bokutachi_wa_tatakawanai.yml"
      )
 
      @desktop_dirpath ||= "/Users/#{ENV["USER"]}/Desktop/voting_tickets"
-     @test_dirpath ||= File.dirname(File.expand_path(__FILE__))
+     @test_dirpath ||= File.expand_path(File.dirname(__FILE__))
      @no_images_dirpath ||= "#{@test_dirpath}/no_images"
      @empty_dirpath ||= "#{@test_dirpath}/empty"
 
@@ -24,7 +22,7 @@ class TestVotingTicketFactory < Minitest::Test
      FileUtils.rm_r(@desktop_dirpath) if Dir.exist?(@desktop_dirpath)
 
      FileUtils.mkdir(@desktop_dirpath)
-     FileUtils.cp(Dir["#{File.expand_path("images/bokutachi")}/*"], @desktop_dirpath)
+     FileUtils.cp(Dir["#{@test_dirpath}/images/bokutachi/*"], @desktop_dirpath)
 
      FileUtils.mkdir(@no_images_dirpath)
      FileUtils.mkdir(@empty_dirpath)
@@ -43,8 +41,8 @@ class TestVotingTicketFactory < Minitest::Test
     })
 
     @specific_factory ||= Sousenkyo::VotingTicket::Factory.new({
-      image_dir_path: File.expand_path("images/bokutachi/"),
-      measurements: @measurements    
+      image_dir_path: "#{@test_dirpath}/images/bokutachi/",
+      measurements: @measurements
     })
   end
 
