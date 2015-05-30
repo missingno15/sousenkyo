@@ -1,14 +1,16 @@
 require_relative "minitest_helper"
 require_relative "extensions/base_voting_ticket_test"
+require_relative "extensions/filepath_helper"
 require "sousenkyo/voting_ticket"
 
 class TestManatsuNoSoundsGoodVotingTicket600DPI < Minitest::Test
   include BaseVotingTicketTest 
+  include FilepathHelper 
 
   private  
 
   def measurements_filepath
-    "#{File.dirname(__FILE__)}/fixtures/measurements/manatsu_no_sounds_good.yml"
+    "#{fixtures_dirpath}/measurements/manatsu_no_sounds_good.yml"
   end
 
   def ticket_path

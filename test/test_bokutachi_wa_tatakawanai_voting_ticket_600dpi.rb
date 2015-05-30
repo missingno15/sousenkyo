@@ -1,14 +1,16 @@
 require_relative "minitest_helper"
 require_relative "extensions/base_voting_ticket_test"
+require_relative "extensions/filepath_helper"
 require "sousenkyo/voting_ticket"
 
 class TestBokutachiWaTatakawanaiVotingTicket600DPI < Minitest::Test
   include BaseVotingTicketTest 
+  include FilepathHelper 
 
   private  
 
   def measurements_filepath
-    "#{File.dirname(__FILE__)}/fixtures/measurements/bokutachi_wa_tatakawanai.yml"
+    "#{fixtures_dirpath}/measurements/bokutachi_wa_tatakawanai.yml"
   end
 
   def ticket_path
@@ -40,10 +42,10 @@ class TestBokutachiWaTatakawanaiVotingTicket600DPI < Minitest::Test
   end
 
   def expected_width_in_cm
-    11.9
+    11.82
   end
 
   def expected_height_in_cm
-    11.9
+    11.815
   end
 end

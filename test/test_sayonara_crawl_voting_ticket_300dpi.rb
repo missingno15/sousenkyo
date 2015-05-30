@@ -1,14 +1,16 @@
 require_relative "minitest_helper"
 require_relative "extensions/base_voting_ticket_test"
+require_relative "extensions/filepath_helper"
 require "sousenkyo/voting_ticket"
 
 class TestSayonaraCrawlVotingTicket300DPI < Minitest::Test
   include BaseVotingTicketTest 
+  include FilepathHelper 
 
   private  
 
   def measurements_filepath
-    "#{File.dirname(__FILE__)}/fixtures/measurements/sayonara_crawl.yml"
+    "#{fixtures_dirpath}/measurements/sayonara_crawl.yml"
   end
 
   def ticket_path

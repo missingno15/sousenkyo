@@ -1,4 +1,5 @@
 require_relative "minitest_helper"
+require_relative "extensions/filepath_helper"
 require "sousenkyo/voting_ticket"
 require "sousenkyo/voting_ticket/factory"
 require "sousenkyo/errors/empty_directory"
@@ -7,22 +8,23 @@ require "yaml"
 require "fileutils"
 
 class TestVotingTicketFactory < Minitest::Test
+  include FilepathHelper
+
   def setup
     @measurements ||= YAML.load_file(
-      "#{File.dirname(__FILE__)}/fixtures/measurements/bokutachi_wa_tatakawanai.yml"
+      "#{fixtures_dirpath}/measurements/bokutachi_wa_tatakawanai.yml"
      )
 
      @desktop_dirpath ||= "/Users/#{ENV["USER"]}/Desktop/voting_tickets"
-     @test_dirpath ||= File.expand_path(File.dirname(__FILE__))
-     @no_images_dirpath ||= "#{@test_dirpath}/no_images"
-     @empty_dirpath ||= "#{@test_dirpath}/empty"
+     @no_images_dirpath ||= "#{test_dirpath}/no_images"
+     @empty_dirpath ||= "#{test_dirpath}/empty"
 
      FileUtils.rm_r(@no_images_dirpath) if Dir.exist?(@no_images_dirpath)
      FileUtils.rm_r(@empty_dirpath) if Dir.exist?(@empty_dirpath)
      FileUtils.rm_r(@desktop_dirpath) if Dir.exist?(@desktop_dirpath)
 
      FileUtils.mkdir(@desktop_dirpath)
-     FileUtils.cp(Dir["#{@test_dirpath}/images/bokutachi/*"], @desktop_dirpath)
+     FileUtils.cp(Dir["#{test_dirpath}/images/bokutachi/*"], @desktop_dirpath)
 
      FileUtils.mkdir(@no_images_dirpath)
      FileUtils.mkdir(@empty_dirpath)
@@ -41,7 +43,7 @@ class TestVotingTicketFactory < Minitest::Test
     })
 
     @specific_factory ||= Sousenkyo::VotingTicket::Factory.new({
-      image_dir_path: "#{@test_dirpath}/images/bokutachi/",
+      image_dir_path: "#{test_dirpath}/images/bokutachi/",
       measurements: @measurements
     })
   end
