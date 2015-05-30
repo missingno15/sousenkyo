@@ -9,7 +9,7 @@ module Sousenkyo
     def serial_code_area
       {
         x: calculate_x,
-        y: calcuate_y,
+        y: calculate_y,
         width: calculate_width,
         height: calculate_height
       }

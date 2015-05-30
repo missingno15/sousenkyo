@@ -7,7 +7,7 @@ module Sousenkyo
 
       def parse_serial_codes
         tickets.map do |ticket|
-          dc    = DimensionCalulator.new(ticket)
+          dc    = DimensionCalculator.new(ticket)
           image = RTesseract::Mixed.new(
             ticket.filepath,
             { areas: [ dc.serial_code_area ] }
@@ -17,6 +17,10 @@ module Sousenkyo
           SerialCode.new(serial_code)
         end
       end
+
+      private
+
+      attr_reader :tickets
     end
   end
 end
