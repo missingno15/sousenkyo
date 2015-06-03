@@ -22,31 +22,42 @@ def get_group_page(group)
   )
 end
 
-roster = {}
+roster = []
 
 GROUPS.each do |group|
   members_page = get_group_page(group)
-  roster[group.to_sym] = {}
+  #roster[group.to_sym] = {}
   
   (1..5).to_a.each do |n|
     team_area = members_page.at("#team_#{n}")
 
     next if team_area.nil?
 
-    team_name = team_area.at("h3").text.strip.gsub(/\s/, "")
-    members = team_area.css(".ml_name").map do |name| 
-      {
-        jp_name: name.text.strip.gsub(/\s/, ""),
-        jp_name_with_space: name.text.strip,
-        eng_name: ""
+    team_name = team_area.at("h3").text.strip
+    team_area.css(".ml_name").each do |name| 
+  
+      roster << {
+        group: group,
+        team: team_name,
+        jpname: name.text.strip.gsub(/\s/, ""),
+        jpname_with_space: name.text.strip,
+        engname: nil
       }
+      puts name.text
+
+      # {
+      #   jp_name: name.text.strip.gsub(/\s/, ""),
+      #   jp_name_with_space: name.text.strip,
+      #   eng_name: ""
+      #
+      # }
     end
 
-    puts team_name
-    members.each { |member| puts "\t" + member[:jp_name] }
+    # puts team_name
+    # members.each { |member| puts "\t" + member[:jp_name] }
 
-    roster[group.to_sym][team_name.to_sym] = members
+    # roster[group.to_sym][team_name.to_sym] = members
   end
 end
 
-File.write("roster.yml", roster.to_yaml)
+File.write("superroster.yml", roster.to_yaml)

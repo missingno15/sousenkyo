@@ -1,0 +1,397 @@
+---
+- :group: SKE48
+  :team: TeamS
+  :jpname: "東李苑"
+  :jpname_with_space: "東 李苑"
+  :engname: Azuma Rion
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "犬塚あさな"
+  :jpname_with_space: "犬塚 あさな"
+  :engname: Inuzuka Asana
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "大矢真那"
+  :jpname_with_space: "大矢 真那"
+  :engname: Oya Masana
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "北川綾巴"
+  :jpname_with_space: "北川 綾巴"
+  :engname: Kitagawa Ryoha
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "後藤理沙子"
+  :jpname_with_space: "後藤 理沙子"
+  :engname: Goto Risako
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "竹内舞"
+  :jpname_with_space: "竹内 舞"
+  :engname: Takeuchi Mai
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "田中菜津美"
+  :jpname_with_space: "田中 菜津美"
+  :engname: Tanaka Natsumi
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "野口由芽"
+  :jpname_with_space: "野口 由芽"
+  :engname: Noguchi Yume
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "二村春香"
+  :jpname_with_space: "二村 春香"
+  :engname: Futamura Haruka
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "松井珠理奈"
+  :jpname_with_space: "松井 珠理奈"
+  :engname: Matsui Jurina
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "松本慈子"
+  :jpname_with_space: "松本 慈子"
+  :engname: Matsumoto Chikako
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "宮澤佐江"
+  :jpname_with_space: "宮澤 佐江"
+  :engname: Miyazawa Sae
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "宮前杏実"
+  :jpname_with_space: "宮前 杏実"
+  :engname: Miyamae Ami
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "矢方美紀"
+  :jpname_with_space: "矢方 美紀"
+  :engname: Yakata Miki
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "山内鈴蘭"
+  :jpname_with_space: "山内 鈴蘭"
+  :engname: Yamauchi Suzuran
+  :vote_count: 
+- :group: SKE48
+  :team: TeamS
+  :jpname: "渡辺美優紀"
+  :jpname_with_space: "渡辺 美優紀"
+  :engname: Watanabe Miyuki
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "荒井優希"
+  :jpname_with_space: "荒井 優希"
+  :engname: Arai Yuki
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "石田安奈"
+  :jpname_with_space: "石田 安奈"
+  :engname: Ishida Anna
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "内山命"
+  :jpname_with_space: "内山 命"
+  :engname: Uchiyama Mikoto
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "江籠裕奈"
+  :jpname_with_space: "江籠 裕奈"
+  :engname: Ego Yuna
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "大場美奈"
+  :jpname_with_space: "大場 美奈"
+  :engname: Oba Mina
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "北野瑠華"
+  :jpname_with_space: "北野 瑠華"
+  :engname: Kitano Ruka
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "神門沙樹"
+  :jpname_with_space: "神門 沙樹"
+  :engname: Goudo Saki
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "惣田紗莉渚"
+  :jpname_with_space: "惣田 紗莉渚"
+  :engname: Souda Sarina
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "高木由麻奈"
+  :jpname_with_space: "高木 由麻奈"
+  :engname: Takagi Yumana
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "髙塚夏生"
+  :jpname_with_space: "髙塚 夏生"
+  :engname: Takatsuka Natsuki
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "高柳明音"
+  :jpname_with_space: "高柳 明音"
+  :engname: Takayanagi Akane
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "日高優月"
+  :jpname_with_space: "日高 優月"
+  :engname: Hidaka Yuzuki
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "古畑奈和"
+  :jpname_with_space: "古畑 奈和"
+  :engname: Furuhata Nao
+  :vote_count: 
+- :group: SKE48
+  :team: TeamKII
+  :jpname: "山下ゆかり"
+  :jpname_with_space: "山下 ゆかり"
+  :engname: Yamashita Yukari
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "磯原杏華"
+  :jpname_with_space: "磯原 杏華"
+  :engname: Isohara Kyoka
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "市野成美"
+  :jpname_with_space: "市野 成美"
+  :engname: Ichino Narumi
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "梅本まどか"
+  :jpname_with_space: "梅本 まどか"
+  :engname: Umemoto Madoka
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "加藤るみ"
+  :jpname_with_space: "加藤 るみ"
+  :engname: Kato Rumi
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "木本花音"
+  :jpname_with_space: "木本 花音"
+  :engname: Kimoto Kanon
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "熊崎晴香"
+  :jpname_with_space: "熊崎 晴香"
+  :engname: Kumazaki Haruka
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "小石公美子"
+  :jpname_with_space: "小石 公美子"
+  :engname: Koishi Kumiko
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "斉藤真木子"
+  :jpname_with_space: "斉藤 真木子"
+  :engname: Saito Makiko
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "酒井萌衣"
+  :jpname_with_space: "酒井 萌衣"
+  :engname: Sakai Mei
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "佐藤すみれ"
+  :jpname_with_space: "佐藤 すみれ"
+  :engname: Kamikyokutachi
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "柴田阿弥"
+  :jpname_with_space: "柴田 阿弥"
+  :engname: Shibata Aya
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "須田亜香里"
+  :jpname_with_space: "須田 亜香里"
+  :engname: Suda Akari
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "髙寺沙菜"
+  :jpname_with_space: "髙寺 沙菜"
+  :engname: Takatera Sana
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "谷真理佳"
+  :jpname_with_space: "谷 真理佳"
+  :engname: Tani Marika
+  :vote_count: 
+- :group: SKE48
+  :team: TeamE
+  :jpname: "福士奈央"
+  :jpname_with_space: "福士 奈央"
+  :engname: Fukushi Nao
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "相川暖花"
+  :jpname_with_space: "相川 暖花"
+  :engname: Aikawa Honoka
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "青木詩織"
+  :jpname_with_space: "青木 詩織"
+  :engname: Aoki Shiori
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "浅井裕華"
+  :jpname_with_space: "浅井 裕華"
+  :engname: Asai Yuka
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "井田玲音名"
+  :jpname_with_space: "井田 玲音名"
+  :engname: Ida Reona
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "太田彩夏"
+  :jpname_with_space: "太田 彩夏"
+  :engname: Ota Ayaka
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "小畑優奈"
+  :jpname_with_space: "小畑 優奈"
+  :engname: Obata Yuna
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "片岡成美"
+  :jpname_with_space: "片岡 成美"
+  :engname: Kataoka Narumi
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "鎌田菜月"
+  :jpname_with_space: "鎌田 菜月"
+  :engname: Kamata Natsuki
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "川崎成美"
+  :jpname_with_space: "川崎 成美"
+  :engname: Kawasaki Narumi
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "後藤楽々"
+  :jpname_with_space: "後藤 楽々"
+  :engname: Goto Rara
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "末永桜花"
+  :jpname_with_space: "末永 桜花"
+  :engname: Suenaga Oka
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "杉山愛佳"
+  :jpname_with_space: "杉山 愛佳"
+  :engname: Sugiyama Aika
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "髙畑結希"
+  :jpname_with_space: "髙畑 結希"
+  :engname: Takahata Yuuki
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "竹内彩姫"
+  :jpname_with_space: "竹内 彩姫"
+  :engname: Takeuchi Saki
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "辻のぞみ"
+  :jpname_with_space: "辻 のぞみ"
+  :engname: Tsuji Nozomi
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "野島樺乃"
+  :jpname_with_space: "野島 樺乃"
+  :engname: Nojima Kano
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "町音葉"
+  :jpname_with_space: "町 音葉"
+  :engname: Machi Otoha
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "松村香織"
+  :jpname_with_space: "松村 香織"
+  :engname: Matsumura Kaori
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "村井純奈"
+  :jpname_with_space: "村井 純奈"
+  :engname: Murai Junna
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "山田樹奈"
+  :jpname_with_space: "山田 樹奈"
+  :engname: Yamada Juna
+  :vote_count: 
+- :group: SKE48
+  :team: "研究生"
+  :jpname: "和田　愛菜"
+  :jpname_with_space: "和田　愛菜"
+  :engname: Wada Aina
+  :vote_count: 

@@ -1,84 +1,75 @@
 module Sousenkyo
   class Manifesto
-    MANIFESTO_PATH = Sousenkyo.config_path("manifesto.yml")
+    attr_reader :filepath
+    attr_accessor :list
 
-    attr_accessor :db
-
-    def initialize
-      @db = load_manifesto 
-      @roster = load_roster
+    def initialize(args)
+      @filepath = args.fetch(:manifesto_path, Sousenkyo.config_path("manifesto.yml"))
+      load_manifesto
     end
 
     def add(member)
-      db[member.name.to_sym] = member.vote_count
-      write(db)
+      unless already_exists?(member) 
+        list << member
+        save!
+      end
     end
 
-    def edit(member)
-      db[search_for(member)] = member.vote_count
-      write(db)
-    rescue MemberNotFound
-      puts "Couldn't find member with name of #{member.name}"
+    def read
+      list.map { |member| self.new(member) }
+    end
+
+    def edit_vote_count(member)
+      list.map! do |existing_member|
+        if existing_member.jpname == member.jpname
+          existing_member.vote_count = member.vote_count
+          existing_member
+        else
+          existing_member
+        end
+      end
+
+      save!
     end
 
     def delete(member)
-      key = search_for(member)
-      response = confirm_delete(key)
-
-      until response == "y" || response || == "n"
-        response = confirm_delete(key)
+      list.delete_if do |existing_member| 
+        existing_member.jpname == member.jpname
       end
 
-      if response == "y"
-        db.delete(key)
-        write(db)
-      elsif response == "n"
-        exit 0
-      end
-    rescue MemberNotFound
-    end
-
-    def list
-      db.each do |member, vote_count|
-        puts "#{member}".rjust()
-      end
-    end
-
-    def filepath
-      MANIFESTO_PATH
+      save!
     end
 
     private
 
+    attr_reader :filepath, :roster_path
+
     def load_manifesto
-      if File.exists?(MANIFESTO_PATH)
-        YAML.load_file(MANIFESTO_PATH)
+      if File.exists?(filepath)
+        @list = YAML.load_file(filepath).map do |member|
+          Member.new(member)
+        end
       else
-        {}
+        @list = []
       end
     end
 
-    def load_roster
-      YAML.load_file(File.join(Sousenkyo.root, "config", "roster2015.yml")) 
-    end
-
-    def write(obj)
-      File.write(MANIFESTO_PATH, obj.to_yaml)
-    end
-
-    def search_for(member)
-      key = db.keys.find { |name| name == member.name.to_sym }
-
-      if key
-        key
-      else
-        raise MemberNotFound 
+    def already_exists?(member)
+      list.any? do |existing_member| 
+        existing_member.jpname == member.jpname
       end
     end
 
-    def confirm_delete(name)
-      puts "Are you sure you want to delete #{name.to_s}? (y/n)"
-      response = gets.chomp
+    def list_to_hash
+      if list.empty?
+        list
+      else
+        list.map(&:attributes)
+      end
+    end
+
+    def save!
+      File.write(filepath, list_to_hash.to_yaml)
     end
   end
 end

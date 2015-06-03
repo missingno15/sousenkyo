@@ -38,12 +38,12 @@ class TestVotingTicketFactory < Minitest::Test
     })
 
     @empty_factory ||= Sousenkyo::VotingTicket::Factory.new({
-      image_dir_path: @empty_dirpath,
+      image_dirpath: @empty_dirpath,
       measurements: @measurements
     })
 
     @specific_factory ||= Sousenkyo::VotingTicket::Factory.new({
-      image_dir_path: "#{test_dirpath}/images/bokutachi/",
+      image_dirpath: "#{test_dirpath}/images/bokutachi/",
       measurements: @measurements
     })
   end
@@ -92,7 +92,7 @@ class TestVotingTicketFactory < Minitest::Test
 
   def test_that_empty_directory_raise_an_error_when_no_images_are_found
     no_images_factory = Sousenkyo::VotingTicket::Factory.new({
-      image_dir_path: @no_images_dirpath,
+      image_dirpath: @no_images_dirpath,
       measurements: @measurements
     })
     assert_raises(Sousenkyo::Errors::TicketsNotDetected) do

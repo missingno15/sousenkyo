@@ -3,7 +3,7 @@ module Sousenkyo
     class Factory
       def initialize(args)
         @voting_tickets_dir = args.fetch(
-          :image_dir_path,
+          :image_dirpath,
           "/Users/#{ENV["USER"]}/Desktop/voting_tickets"
         )
         @measurements = args[:measurements]

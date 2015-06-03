@@ -1,5 +1,13 @@
 module Sousenkyo
   class CLISuite < Thor
+    attr_reader :settings, :manifesto
+
+    def initialize
+      super
+      @settings = YAML.load_file(Sousenkyo.config_path("settings.yml"))
+      @manifesto = Manifesto.new({ manifesto: settings[:manifesto_path] })
+    end
+
     desc "sousenkyo vote", "Activate the entire process"
     long_desc <<-VOTE
     
@@ -9,11 +17,10 @@ module Sousenkyo
     of your choice. Before running `sousenkyo vote`, make sure to
     run `sousenkyo add MEMBER VOTE_COUNT`.
     VOTE
+
     def vote
-      settings = YAML.load_file(Sousenkyo.config_path("settings.yml"))
-      manifesto = Manifesto.new
-      tickets   = VotingTicketFactory.new(
-        image_dir_path: settings["image_dir_path"],
+      tickets = VotingTicketFactory.new(
+        image_dirpath: settings["image_dirpath"],
         measurements: YAML.load_file(Sousenkyo.config_path("measurements.yml"))
       ).create_tickets!
 
@@ -21,27 +28,28 @@ module Sousenkyo
 
       VoteProxy.new(
         serial_codes,
-        manifesto.filepath  
+        manifesto
       ).vote!
     end
 
     def add(name, count)
-      manifesto = Manifesto.new
-      manifesto.add(Member.new(name, count))
+      member = Member.find_by({ jpname: name})
+      member.vote_count = count
+      manifesto.add(member)
     end
 
     def edit(name, count)
-      manifesto = Manifesto.new
-      manifesto.edit(Member.new(name, count))
+      member = Member.find_by({ jpname: name})
+      member.vote_count = count
+      manifesto.edit(member)
     end
 
-    def delete(name, count)
-      manifesto = Manifesto.new
-      manifesto.delete(Member.new(name, count))
+    def delete(name)
+      member = Member.find_by({ jpname: name})
+      manifesto.delete(member)
     end
 
     def manifesto
-      manifesto = Manifesto.new
       manifesto.list
     end
   end
