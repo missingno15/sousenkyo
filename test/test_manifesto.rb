@@ -58,7 +58,7 @@ class TestManifesto < Minitest::Test
     sasaki_yukari.vote_count = 2
     manifesto.add(sasaki_yukari)
     sasaki_yukari.vote_count = 6
-    manifesto.edit_vote_count(sasaki_yukari)
+    manifesto.edit(sasaki_yukari)
 
     assert_equal(6, test_manifesto[0][:vote_count])
   end

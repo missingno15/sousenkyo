@@ -16,13 +16,13 @@ module Sousenkyo
     end
 
     def read
-      list.map { |member| self.new(member) }
+      list.map { |member| Member.new(member) }
     end
 
-    def edit_vote_count(member)
+    def edit(member)
       list.map! do |existing_member|
         if existing_member.jpname == member.jpname
-          existing_member.vote_count = member.vote_count
+          existing_member.attributes = member.attributes
           existing_member
         else
           existing_member
@@ -46,9 +46,7 @@ module Sousenkyo
 
     def load_manifesto
       if File.exists?(filepath)
-        @list = YAML.load_file(filepath).map do |member|
-          Member.new(member)
-        end
+        @list = YAML.load_file(filepath).map { |member| Member.new(member) }
       else
         @list = []
       end

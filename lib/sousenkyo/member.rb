@@ -2,7 +2,12 @@ module Sousenkyo
   class Member
     ROSTER = YAML.load_file(Sousenkyo.config_path("roster2015.yml"))
 
-    attr_reader :group, :team, :jpname, :jpname_with_space, :engname
+    attr_reader :engname,
+                :group,
+                :jpname,
+                :jpname_with_space,
+                :successful_vote_count,
+                :team
     attr_accessor :vote_count
 
     def self.all
@@ -37,7 +42,18 @@ module Sousenkyo
       @jpname = args[:jpname]
       @jpname_with_space = args[:jpname_with_space]
       @engname = args[:engname]
-      @vote_count = args[:vote_count]
+      @vote_count = args.fetch(:vote_count, 0)
+      @successful_vote_count = args.fetch(:successful_vote_count, 0)
+    end
+
+    def attributes=(attrs)
+      if attrs.class == Hash
+        attrs.each do |k, v|
+          if instance_variable_defined?("@#{k}")
+            instance_variable_set("@#{k}", v)
+          end
+        end
+      end
     end
 
     def attributes
@@ -47,8 +63,18 @@ module Sousenkyo
         jpname: jpname,
         jpname_with_space: jpname_with_space,
         engname: engname,
-        vote_count: vote_count
+        vote_count: vote_count,
+        successful_vote_count: successful_vote_count
       }
+    end
+
+
+    def remaining_vote_count
+      vote_count - successful_vote_count
+    end
+
+    def increment_successful_vote_count!
+      @successful_vote_count += 1
     end
   end
 end
