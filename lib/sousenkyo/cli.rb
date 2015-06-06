@@ -28,7 +28,8 @@ module Sousenkyo
 
       VoteProxy.new(
         serial_codes,
-        manifesto
+        manifesto,
+        settings[:browser_type]
       ).vote!
     end
 
@@ -50,7 +51,7 @@ module Sousenkyo
     end
 
     def manifesto
-      manifesto.list
+      manifesto.read
     end
   end
 end

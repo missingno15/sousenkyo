@@ -21,9 +21,9 @@ module Sousenkyo
 
       def image_scan_paths
         if tickets_directory.empty?
-          raise Errors::EmptyDirectory
+          raise Sousenkyo::Errors::EmptyDirectory
         elsif all_tickets.empty?
-          raise Errors::TicketsNotDetected
+          raise Sousenkyo::Errors::TicketsNotDetected
         else
           all_tickets.map do |path| 
             File.expand_path(path)

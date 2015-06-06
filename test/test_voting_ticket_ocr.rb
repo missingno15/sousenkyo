@@ -13,7 +13,7 @@ class TestVotingTicketOcr < Minitest::Test
 
   def setup
     tickets = Sousenkyo::VotingTicket::Factory.new({
-      image_dir_path: "#{images_dirpath}/bokutachi",
+      image_dirpath: "#{images_dirpath}/bokutachi",
       measurements: YAML.load_file("#{fixtures_dirpath}/measurements/bokutachi_wa_tatakawanai.yml")
     }).create_tickets!
 
@@ -24,30 +24,18 @@ class TestVotingTicketOcr < Minitest::Test
   end
 
   def test_that_it_returns_wm8si255_ads7xsc7
-    assert_includes(
-      serial_codes,
-      "wm8si255 ads7xsc7"
-    )
+    assert_includes(serial_codes, "wm8si255 ads7xsc7")
   end
 
   def test_that_it_returns_ms8zhn84_aripu7f7
-    assert_includes(
-      serial_codes, 
-      "ms8zhn84 aripu7f7"
-    )
+    assert_includes(serial_codes, "ms8zhn84 aripu7f7")
   end
 
   def test_that_it_returns_5aufaze3_nwrp56jp
-    assert_includes(
-      serial_codes, 
-      "5aufaze3 nwrp56jp"
-    )
+    assert_includes(serial_codes, "5aufaze3 nwrp56jp")
   end
 
   def test_that_it_returns_idm76743_7c8sirt2
-    assert_includes(
-      serial_codes,
-      "idm76743 7c8sirt2"
-    )
+    assert_includes(serial_codes, "idm76743 7c8sirt2")
   end
 end

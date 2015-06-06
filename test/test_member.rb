@@ -155,9 +155,6 @@ class TestMember < Minitest::Test
       engname: "Tano Yuka"
     })
 
-    tano_yuuka.vote_count = 12
-    tano_yuuka.increment_successful_vote_count!
-
     new_attributes = {
       group: "AKB48",
       team: "Team K",
@@ -170,7 +167,8 @@ class TestMember < Minitest::Test
 
     tano_yuuka.attributes = new_attributes
 
-    assert_equal(new_attributes, tano_yuuka.attributes)
+    assert_equal(12, tano_yuuka.vote_count)
+    assert_equal(2, tano_yuuka.successful_vote_count)
   end
 
   def test_that_only_hashes_can_be_accepted_for_attributes_setter_method

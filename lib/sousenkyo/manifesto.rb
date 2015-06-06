@@ -15,10 +15,6 @@ module Sousenkyo
       end
     end
 
-    def read
-      list.map { |member| Member.new(member) }
-    end
-
     def edit(member)
       list.map! do |existing_member|
         if existing_member.jpname == member.jpname
