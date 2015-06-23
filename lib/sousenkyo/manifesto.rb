@@ -18,8 +18,9 @@ module Sousenkyo
     def edit(member)
       list.map! do |existing_member|
         if existing_member.jpname == member.jpname
-          existing_member.attributes = member.attributes
-          existing_member
+          existing_member.tap do |em|
+            em.attributes = member.attributes
+          end
         else
           existing_member
         end
@@ -55,11 +56,7 @@ module Sousenkyo
     end
 
     def list_to_hash
-      if list.empty?
-        list
-      else
-        list.map(&:attributes)
-      end
+      list.empty? ? list : list.map(&:attributes)
     end
 
     def save!

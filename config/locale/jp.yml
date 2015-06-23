@@ -1,0 +1,6 @@
+:voting:
+  :success: "[ \e[32m投票成功\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}"
+  :errors:
+    :empty: "[ \e[31m投票失敗\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}; シリアルナンバーは入力必須です。"
+    :length: "[ \e[31m投票失敗\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}; シリアルナンバーは8桁ずつ入力してください。"
+    :void: "[ \e[31m投票失敗\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}; 入力されたシリアルナンバーは無効であるか既に投票済みです。"

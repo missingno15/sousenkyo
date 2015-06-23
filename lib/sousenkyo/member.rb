@@ -68,13 +68,16 @@ module Sousenkyo
       }
     end
 
+    def increment_successful_vote_count!
+      @successful_vote_count += 1
+    end
+
+    def name
+      Sousenkyo.locale == :en ? engname : jpname
+    end
 
     def remaining_vote_count
       vote_count - successful_vote_count
-    end
-
-    def increment_successful_vote_count!
-      @successful_vote_count += 1
     end
   end
 end

@@ -1,0 +1,6 @@
+:voting:
+  :success: "[  \e[32mVOTE SUCCESSFUL\e[0m  ] {{ time }} - {{ name }}; {{ serial_code }}"
+  :errors:
+    :empty: "[ \e[31mVOTE UNSUCCESSFUL\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}; You must enter a serial code."
+    :length: "[ \e[31mVOTE UNSUCCESSFUL\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}; Each serial code must have 8 digits."
+    :void: "[ \e[31mVOTE UNSUCCESSFUL\e[0m ] {{ time }} - {{ name }}; {{ serial_code }}; The serial code you have entered is either invalid or already previously used."

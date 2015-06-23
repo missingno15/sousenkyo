@@ -3,7 +3,7 @@ module Sousenkyo
     attr_reader :serial_code
 
     def initialize(serial_code)
-      @serial_code = serial_code
+      @number = number
       @vote_successful = nil
     end
 
@@ -26,7 +26,7 @@ module Sousenkyo
     private
 
     def split_code
-      @split_code ||= serial_code.split(" ")
+      @split_code ||= number.split(" ")
     end
   end
 end
